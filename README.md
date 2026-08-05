@@ -1,81 +1,135 @@
-# AWS S3 + Snowflake Analytics Project
+# Fraud Detection and Transaction Intelligence
 
-## Overview
-This project demonstrates how to build a lightweight cloud analytics workflow by integrating AWS S3 with Snowflake to perform data analysis and solve business problems.
+This project demonstrates the ability to transform raw transactional data into actionable business insights by integrating AWS S3 with Snowflake and applying SQL-based analysis to detect fraud patterns.
 
-Instead of focusing on heavy data engineering pipelines, this project emphasizes practical data handling, querying, and insight generation using cloud-native tools.
+It highlights practical skills in data analysis, cloud integration, and solving real-world business problems using structured data, with support from modern AI tools to accelerate analysis and ideation.
 
-## Objectives
-- Connect AWS S3 with Snowflake for seamless data ingestion
-- Load and analyze structured datasets (CSV format)
-- Perform SQL-based analysis to answer business questions
-- Generate insights that support decision-making
-- Visualize workflows and results for clarity
+---
 
-## Tech Stack
-- AWS S3 (data storage)
-- Snowflake (data warehouse & analytics)
-- SQL (data querying)
-- Python (optional for preprocessing)
-- Eraser AI (pipeline diagram creation)
-- ChatGPT & Gemini (analysis assistance and ideation)
+## Project Summary
 
-## Data Sources
-The dataset used in this project is stored in the `/dataset` folder.  
-It includes:
-- Sample CSV files for analysis
-- A README describing dataset structure and fields
+- Connected AWS S3 with Snowflake to enable seamless data ingestion  
+- Built structured data layers for efficient querying and analysis  
+- Cleaned and transformed raw transaction data using SQL  
+- Developed key performance indicators (KPIs) to monitor transaction behavior  
+- Identified fraud patterns and high-risk activities through analytical queries  
+- Produced dashboard-ready datasets for business intelligence tools  
 
-Additional processed or result files can be stored separately if needed.
+---
 
-## Workflow
+## Business Problem
 
-### 1. Data Storage (AWS S3)
-- Upload CSV datasets to an S3 bucket
-- Ensure proper folder organization for easy access
+Organizations handling digital transactions need to quickly identify fraudulent activities and understand user behavior patterns.
 
-### 2. Snowflake Integration
-- Create Snowflake stage connected to S3
-- Load data into Snowflake tables using COPY INTO
+This project addresses:
 
-### 3. Data Analysis
-- Write SQL queries to explore and analyze the data
-- Identify trends, patterns, and key metrics
-- Solve business-focused questions
+- Detection of suspicious transactions  
+- Identification of high-risk users  
+- Monitoring fraud trends over time  
+- Converting raw data into meaningful business insights  
 
-### 4. Insights & Reporting
-- Summarize findings
-- Prepare outputs for dashboards or reporting
+---
 
-## Pipeline Diagram
-<img src="images/pipeline.png" width="600">
+## Architecture
 
-The pipeline was designed using Eraser AI to clearly illustrate data flow from AWS S3 to Snowflake and the analysis layer.
+Workflow:
 
-## Sample Dashboard / Output
-<img src="images/dashboard.png" width="600">
+Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables → Fraud Insights → Dashboards
 
-Dashboards or outputs highlight key insights derived from Snowflake queries.
+### Pipeline Overview
+<img src="architecture/pipeline.png" width="700">
 
-## Key Highlights
-- Demonstrates real-world cloud data workflow
-- Focuses on business problem-solving rather than complex engineering
-- Uses industry-relevant tools (AWS + Snowflake)
-- Incorporates AI tools (ChatGPT, Gemini) for faster analysis and idea generation
-- Clean, modular, and easy-to-understand structure
+This pipeline was designed using **Eraser AI** to clearly visualize the end-to-end data flow and system architecture.
+
+### S3 Data Ingestion
+<img src="architecture/s3_bucket.png" width="600">
+
+### Snowflake Architecture
+<img src="architecture/snowflake_db_architecture.png" width="700">
+
+---
+
+## Dashboards
+
+### Fraud Risk and Transaction Intelligence
+<img src="dashboards/Fraud%20Risk%20%26%20Transaction%20Intelligence.png" width="700">
+
+### Fraud Behaviour Analysis
+<img src="dashboards/Fraud_Behvaiour.png" width="700">
+
+---
+
+## Key Analysis and Insights
+
+- Detection of abnormal transaction spikes  
+- Identification of users with high fraud probability  
+- Analysis of transaction trends and anomalies  
+- KPI-driven insights for decision-making  
+
+AI tools such as **ChatGPT** and **Gemini** were used to assist with exploratory analysis, query optimization, and idea generation for identifying fraud patterns.
+
+---
+
+## Dataset
+
+[transactions_100_records.csv](dataset/transactions_100_records.csv)
+
+---
+
+## SQL Scripts
+
+- [01_ddl.sql](sql/01_ddl.sql)  
+- [02_resources.sql](sql/02_resources.sql)  
+- [03_staging.sql](sql/03_staging.sql)  
+- [04_core_kpis.sql](sql/04_core_kpis.sql)  
+- [05_fraud_pattern.sql](sql/05_fraud_pattern.sql)  
+
+---
 
 ## How to Run
-1. Upload dataset files to your AWS S3 bucket
-2. Create a Snowflake stage linked to S3
-3. Load data into Snowflake tables
-4. Run SQL queries for analysis
-5. Review insights and visualize results
 
-## Future Improvements
-- Add automated data pipelines
-- Integrate BI tools (Tableau / Power BI)
-- Expand dataset for deeper analysis
-- Implement real-time data ingestion
+1. Upload dataset to AWS S3  
+2. Execute SQL scripts in sequence:
+   - `01_ddl.sql`  
+   - `02_resources.sql`  
+   - `03_staging.sql`  
+   - `04_core_kpis.sql`  
+   - `05_fraud_pattern.sql`  
+3. Connect Snowflake to a BI tool (Power BI or Tableau) for visualization  
+
+---
+
+## Tech Stack
+
+- Snowflake  
+- AWS S3  
+- SQL  
+- Power BI / Tableau  
+- Eraser AI (architecture diagrams)  
+- ChatGPT & Gemini (analysis support)  
+
+---
+
+## Key Skills Demonstrated
+
+- Cloud data integration (AWS S3 + Snowflake)  
+- Data cleaning and transformation using SQL  
+- Analytical thinking and business problem solving  
+- KPI design and interpretation  
+- Fraud detection using data analysis  
+- Leveraging AI tools to accelerate analytics workflows  
+
+---
+
+## Potential Enhancements
+
+- Scale to larger datasets  
+- Implement real-time data ingestion  
+- Apply machine learning models for fraud prediction  
+- Build automated alerting systems  
+
+---
 
 ## Author
+
 Shahan S
