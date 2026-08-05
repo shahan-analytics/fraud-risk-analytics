@@ -1,187 +1,157 @@
-## 🚨 Fraud Risk Analytics
+# Fraud Detection and Transaction Intelligence
 
-End-to-end, SQL-driven analytics project simulating a real-world fraud investigation workflow using cloud-based data infrastructure.
+This project demonstrates the ability to transform raw transactional data into actionable business insights by integrating AWS S3 with Snowflake and applying SQL-based analysis to detect fraud patterns.
 
-This project focuses on analysing large-scale transaction data (~5M+ records) to uncover fraud patterns, behavioural anomalies, and key risk indicators.
-
----
-
-## 🎯 Objective
-
-To analyse financial transactions using pre-labelled fraud indicators (`is_fraud`) and identify behavioural patterns and risk signals associated with fraudulent activity.
+It highlights practical skills in data analysis, cloud integration, and solving real-world business problems using structured data.
 
 ---
 
-## 🧠 Business Context
+## Project Summary
 
-In real-world financial systems, machine learning models pre-flag suspicious transactions.
-
-This project simulates the role of a **data analyst investigating flagged transactions**, using historical labelled data to:
-
-- Understand why transactions are marked as fraudulent  
-- Identify behavioural and transactional risk patterns  
-- Generate insights to support fraud monitoring and prevention  
-
-⚠️ This is an **analytical project**, not a predictive modeling task.
+- Connected AWS S3 with Snowflake to enable seamless data ingestion  
+- Built structured data layers for efficient querying and analysis  
+- Cleaned and transformed raw transaction data using SQL  
+- Developed key performance indicators (KPIs) to monitor transaction behavior  
+- Identified fraud patterns and high-risk activities through analytical queries  
+- Produced dashboard-ready datasets for business intelligence tools  
 
 ---
 
-## 📂 Data Source
+## Business Problem
 
-Dataset sourced from Kaggle:
+Organizations handling digital transactions need to quickly identify fraudulent activities and understand user behavior patterns.
 
-- Financial Transactions Dataset for Fraud Detection  
-  https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection  
+This project addresses:
 
-- ~5 million transaction records  
-- Simulates real-world financial activity across accounts, locations, and devices  
-
-Due to size constraints, only a sample dataset is included in `/data`.
-
----
-
-## ⚙️ Tech Stack
-
-- **AWS S3** – Raw data storage  
-- **Snowflake** – Cloud data warehouse  
-- **SQL** – Data transformation and analysis  
-- **Tableau** – Data visualization  
-- **Eraser** – Pipeline/architecture diagram design  
-- **ChatGPT & Gemini** – Assisted in analytical structuring and ideation  
+- Detection of suspicious transactions  
+- Identification of high-risk users  
+- Monitoring fraud trends over time  
+- Converting raw data into meaningful business insights  
 
 ---
 
-## 🔄 Data Pipeline
+## Architecture
 
-Kaggle Dataset → AWS S3 → Snowflake → SQL Analysis → Tableau Dashboards  
+Workflow:
 
----
+Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables → Fraud Insights → Dashboards
 
-## 🏗️ Data Architecture
+Architecture artifacts included in the repository:
 
-![Pipeline](architecture/pipeline_architecture.png)
-
-### ☁️ AWS S3 (Data Storage)
-![S3](architecture/s3_data_storage.png)
-
-### ❄️ Snowflake (Data Warehouse)
-![Snowflake](architecture/snowflake_query_execution.png)
-
-This architecture simulates a real-world cloud-based analytics workflow.
+- `pipeline.png` – End-to-end workflow  
+- `s3_bucket.png` – Data ingestion layer  
+- `snowflake_db_architecture.png` – Data warehouse structure  
 
 ---
 
-## 🧱 Data Modeling
+## Key Analysis and Insights
 
-- Data cleaning and standardisation  
-- Handling timestamp inconsistencies  
-- Structuring data for analytical queries  
-- Optimisation for large-scale processing  
-
----
-
-## 📊 Tableau Dashboards
-
-### 1. Fraud Overview
-
-![Fraud Overview](dashboards/fraud_overview.png)
-
-- Total vs fraudulent transactions  
-- Fraud rate and trend monitoring  
-- High-level KPI tracking  
+- Detection of abnormal transaction spikes  
+- Identification of users with high fraud probability  
+- Analysis of transaction trends and anomalies  
+- KPI-driven insights for decision-making  
 
 ---
 
-### 2. Transaction Behaviour Analysis
+## Dashboards
 
-![Behaviour](dashboards/fraud_behavior.png)
+Two analytical dashboards were created:
 
-- Transaction trends over time  
-- Peak activity detection  
-- Spending deviation insights  
+- Fraud Risk and Transaction Intelligence  
+- Fraud Behaviour Analysis  
 
----
+These dashboards enable:
 
-### 3. Risk & Anomaly Insights
-
-![Risk](dashboards/transaction_insights.png)
-
-- High-risk channels and categories  
-- Location-based anomalies  
-- Behavioural indicators linked to fraud  
+- Monitoring of high-risk transactions  
+- Exploration of user-level fraud patterns  
+- Visualization of trends and anomalies  
 
 ---
 
-## 🧹 Data Preparation
+## SQL Workflow
 
-- Data ingestion from AWS S3 into Snowflake  
-- Cleaning and transformation using SQL  
-- Validation and consistency checks  
-- Query optimisation for performance  
+### Data Setup
+- Created database objects and schemas  
+- Defined structured tables for transaction storage  
 
----
+### Data Integration
+- Connected Snowflake to AWS S3  
+- Configured staging for external data ingestion  
 
-## 🔍 Analytical Framework
+### Data Preparation
+- Cleaned and standardized raw transaction data  
+- Built a reliable dataset for downstream analysis  
 
-### Phase 1: Transaction Overview
-- Analysed transaction volume and distribution  
-- Identified unusual activity patterns  
+### KPI Development
+- Calculated key business metrics:
+  - Total transactions  
+  - Fraud rate  
+  - Average transaction value  
+  - Transaction distribution  
 
-### Phase 2: Fraud Pattern Analysis
-- Evaluated fraud rates across categories  
-- Identified high-risk transaction types  
-
-### Phase 3: Behavioural Analytics
-- Analysed velocity and transaction frequency  
-- Identified spending anomalies  
-
-### Phase 4: Risk Profiling
-- Combined indicators to assess fraud risk  
-- Identified concentration of fraudulent activity  
-
-### Phase 5: Advanced SQL Analysis
-- Window functions (LAG, LEAD)  
-- Rolling metrics and trend analysis  
-- Sequential anomaly detection  
+### Fraud Analysis
+- Implemented logic to detect:
+  - Suspicious transaction patterns  
+  - High-risk users  
+  - Behavioral anomalies  
 
 ---
 
-## 📈 Key Insights
+## Dataset
 
-- Fraud is concentrated in specific transaction types and channels  
-- High transaction velocity strongly correlates with fraud  
-- Behavioural deviations are key fraud indicators  
-- Certain locations show higher fraud concentration  
-- Combining multiple signals improves risk identification  
+`transactions_100_records.csv`
 
----
+Contains structured transaction-level data including:
 
-## 📁 Repository Structure
-
-- `/sql` – SQL queries for analysis (Snowflake)  
-- `/dashboards` – Tableau dashboard screenshots  
-- `/architecture` – Pipeline and infrastructure visuals  
-- `/data` – Dataset documentation and sample data  
+- Transaction ID  
+- User details  
+- Transaction amount  
+- Timestamp  
+- Fraud indicator  
 
 ---
 
-## 💡 Skills Demonstrated
+## How to Run
 
-- Advanced SQL (joins, window functions, aggregations)  
-- Cloud data workflow (AWS S3 → Snowflake)  
-- Fraud risk analysis & anomaly detection  
-- Behavioural data analysis  
-- Large-scale data handling  
-- Data storytelling with Tableau  
-
----
-
-## 🛠️ Tools & Technologies
-
-SQL • Snowflake • AWS S3 • Tableau • Data Warehousing • Analytics  
+1. Upload dataset to AWS S3  
+2. Execute SQL scripts in sequence:
+   - `01_ddl.sql`  
+   - `02_resources.sql`  
+   - `03_staging.sql`  
+   - `04_core_kpis.sql`  
+   - `05_fraud_pattern.sql`  
+3. Connect Snowflake to a BI tool (Power BI or Tableau) for visualization  
 
 ---
 
-## 👤 Author
+## Tech Stack
 
-**Shahan S**
+- Snowflake  
+- AWS S3  
+- SQL  
+- Power BI / Tableau  
+
+---
+
+## Key Skills Demonstrated
+
+- Cloud data integration (AWS S3 + Snowflake)  
+- Data cleaning and transformation using SQL  
+- Analytical thinking and business problem solving  
+- KPI design and interpretation  
+- Fraud detection using data analysis  
+
+---
+
+## Potential Enhancements
+
+- Scale to larger datasets  
+- Implement real-time data ingestion  
+- Apply machine learning models for fraud prediction  
+- Build automated alerting systems  
+
+---
+
+## Author
+Shahan S
+This project is part of a data analytics portfolio focused on solving business problems using cloud-based data platforms and SQL.
