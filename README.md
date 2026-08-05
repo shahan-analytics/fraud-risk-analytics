@@ -40,7 +40,7 @@ Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables 
 <img src="architecture/pipeline.png" width="700">
 
 ### S3 Data Ingestion
-<img src="architecture/s3_bucket.png" width="700">
+<img src="architecture/s3_bucket.png" width="900">
 
 ### Snowflake Architecture
 <img src="architecture/snowflake_db_architecture.png" width="700">
