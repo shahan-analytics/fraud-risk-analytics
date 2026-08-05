@@ -42,7 +42,7 @@ Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables 
 This pipeline was designed using **Eraser AI** to clearly visualize the end-to-end data flow and system architecture.
 
 ### S3 Data Ingestion
-<img src="architecture/s3_bucket.png" width="600">
+<img src="architecture/s3_bucket.png" width="700">
 
 ### Snowflake Architecture
 <img src="architecture/snowflake_db_architecture.png" width="700">
