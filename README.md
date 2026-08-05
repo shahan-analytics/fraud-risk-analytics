@@ -36,11 +36,24 @@ Workflow:
 
 Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables → Fraud Insights → Dashboards
 
-### Architecture Artifacts
+### Pipeline Overview
+<img src="architecture/pipeline.png" width="700">
 
-- [Pipeline Flow](architecture/pipeline.png)  
-- [S3 Bucket Setup](architecture/s3_bucket.png)  
-- [Snowflake Architecture](architecture/snowflake_db_architecture.png)  
+### S3 Data Ingestion
+<img src="architecture/s3_bucket.png" width="600">
+
+### Snowflake Architecture
+<img src="architecture/snowflake_db_architecture.png" width="700">
+
+---
+
+## Dashboards
+
+### Fraud Risk and Transaction Intelligence
+<img src="dashboards/Fraud%20Risk%20%26%20Transaction%20Intelligence.png" width="700">
+
+### Fraud Behaviour Analysis
+<img src="dashboards/Fraud_Behvaiour.png" width="700">
 
 ---
 
@@ -53,35 +66,19 @@ Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables 
 
 ---
 
-## Dashboards
-
-- [Fraud Risk and Transaction Intelligence](dashboards/Fraud%20Risk%20%26%20Transaction%20Intelligence.png)  
-- [Fraud Behaviour Analysis](dashboards/Fraud_Behvaiour.png)  
-
----
-
-## SQL Workflow
-
-### Data Setup
-- [`01_ddl.sql`](sql/01_ddl.sql)
-
-### Data Integration
-- [`02_resources.sql`](sql/02_resources.sql)
-
-### Data Preparation
-- [`03_staging.sql`](sql/03_staging.sql)
-
-### KPI Development
-- [`04_core_kpis.sql`](sql/04_core_kpis.sql)
-
-### Fraud Analysis
-- [`05_fraud_pattern.sql`](sql/05_fraud_pattern.sql)
-
----
-
 ## Dataset
 
-- [`transactions_100_records.csv`](dataset/transactions_100_records.csv)
+[transactions_100_records.csv](dataset/transactions_100_records.csv)
+
+---
+
+## SQL Scripts
+
+- [01_ddl.sql](sql/01_ddl.sql)  
+- [02_resources.sql](sql/02_resources.sql)  
+- [03_staging.sql](sql/03_staging.sql)  
+- [04_core_kpis.sql](sql/04_core_kpis.sql)  
+- [05_fraud_pattern.sql](sql/05_fraud_pattern.sql)  
 
 ---
 
@@ -127,5 +124,5 @@ Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables 
 ---
 
 ## Author
-
-This project is part of a data analytics portfolio focused on solving business problems using cloud-based data platforms and SQL.
+Shahan S
+~ "This project is part of a data analytics portfolio focused on solving business problems using cloud-based data platforms and SQL"
