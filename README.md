@@ -36,11 +36,11 @@ Workflow:
 
 Dataset → AWS S3 → Snowflake Stage → Staging Tables → Analytical Tables → Fraud Insights → Dashboards
 
-Architecture artifacts included in the repository:
+### Architecture Artifacts
 
-- `pipeline.png` – End-to-end workflow  
-- `s3_bucket.png` – Data ingestion layer  
-- `snowflake_db_architecture.png` – Data warehouse structure  
+- [Pipeline Flow](architecture/pipeline.png)  
+- [S3 Bucket Setup](architecture/s3_bucket.png)  
+- [Snowflake Architecture](architecture/snowflake_db_architecture.png)  
 
 ---
 
@@ -55,59 +55,33 @@ Architecture artifacts included in the repository:
 
 ## Dashboards
 
-Two analytical dashboards were created:
-
-- Fraud Risk and Transaction Intelligence  
-- Fraud Behaviour Analysis  
-
-These dashboards enable:
-
-- Monitoring of high-risk transactions  
-- Exploration of user-level fraud patterns  
-- Visualization of trends and anomalies  
+- [Fraud Risk and Transaction Intelligence](dashboards/Fraud%20Risk%20%26%20Transaction%20Intelligence.png)  
+- [Fraud Behaviour Analysis](dashboards/Fraud_Behvaiour.png)  
 
 ---
 
 ## SQL Workflow
 
 ### Data Setup
-- Created database objects and schemas  
-- Defined structured tables for transaction storage  
+- [`01_ddl.sql`](sql/01_ddl.sql)
 
 ### Data Integration
-- Connected Snowflake to AWS S3  
-- Configured staging for external data ingestion  
+- [`02_resources.sql`](sql/02_resources.sql)
 
 ### Data Preparation
-- Cleaned and standardized raw transaction data  
-- Built a reliable dataset for downstream analysis  
+- [`03_staging.sql`](sql/03_staging.sql)
 
 ### KPI Development
-- Calculated key business metrics:
-  - Total transactions  
-  - Fraud rate  
-  - Average transaction value  
-  - Transaction distribution  
+- [`04_core_kpis.sql`](sql/04_core_kpis.sql)
 
 ### Fraud Analysis
-- Implemented logic to detect:
-  - Suspicious transaction patterns  
-  - High-risk users  
-  - Behavioral anomalies  
+- [`05_fraud_pattern.sql`](sql/05_fraud_pattern.sql)
 
 ---
 
 ## Dataset
 
-`transactions_100_records.csv`
-
-Contains structured transaction-level data including:
-
-- Transaction ID  
-- User details  
-- Transaction amount  
-- Timestamp  
-- Fraud indicator  
+- [`transactions_100_records.csv`](dataset/transactions_100_records.csv)
 
 ---
 
@@ -153,5 +127,5 @@ Contains structured transaction-level data including:
 ---
 
 ## Author
-Shahan S
+
 This project is part of a data analytics portfolio focused on solving business problems using cloud-based data platforms and SQL.
