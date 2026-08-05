@@ -1,175 +1,187 @@
-## Fraud Risk Analytics
+## 🚨 Fraud Risk Analytics
 
-SQL-driven and cloud-enabled analytics project simulating a real-world fraud investigation environment, designed to analyse transactional patterns and identify key risk indicators associated with fraudulent activity.
+End-to-end, SQL-driven analytics project simulating a real-world fraud investigation workflow using cloud-based data infrastructure.
 
----
-
-### Objective
-To analyse financial transaction data using labelled fraud indicators, enabling identification of behavioural anomalies and key risk signals associated with fraudulent transactions.
+This project focuses on analysing large-scale transaction data (~5M+ records) to uncover fraud patterns, behavioural anomalies, and key risk indicators.
 
 ---
 
-### Business Context
-In real-world financial systems, machine learning models often pre-flag potentially fraudulent transactions.
+## 🎯 Objective
 
-This project simulates the role of a data analyst investigating these flagged transactions, using historical labelled data to uncover patterns, validate risk indicators, and generate insights that support fraud prevention strategies.
-
-The analysis focuses on understanding why transactions are classified as fraudulent, rather than building predictive models.
+To analyse financial transactions using pre-labelled fraud indicators (`is_fraud`) and identify behavioural patterns and risk signals associated with fraudulent activity.
 
 ---
 
-### Data Source
-The dataset used in this project is sourced from Kaggle:
+## 🧠 Business Context
+
+In real-world financial systems, machine learning models pre-flag suspicious transactions.
+
+This project simulates the role of a **data analyst investigating flagged transactions**, using historical labelled data to:
+
+- Understand why transactions are marked as fraudulent  
+- Identify behavioural and transactional risk patterns  
+- Generate insights to support fraud monitoring and prevention  
+
+⚠️ This is an **analytical project**, not a predictive modeling task.
+
+---
+
+## 📂 Data Source
+
+Dataset sourced from Kaggle:
 
 - Financial Transactions Dataset for Fraud Detection  
   https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection  
 
-The dataset was ingested into AWS S3 and processed within Snowflake to support scalable analytical workflows.
+- ~5 million transaction records  
+- Simulates real-world financial activity across accounts, locations, and devices  
+
+Due to size constraints, only a sample dataset is included in `/data`.
 
 ---
 
-### Data Architecture & Pipeline
+## ⚙️ Tech Stack
 
-Kaggle Dataset → AWS S3 → Snowflake → SQL Analytics → Tableau Dashboards  
-
-- AWS S3 used for raw data storage  
-- Snowflake used as the cloud data warehouse  
-- SQL used for transformation and analysis  
-- Tableau used for visualization and insight delivery  
-
-(Add architecture diagram in /images folder)
+- **AWS S3** – Raw data storage  
+- **Snowflake** – Cloud data warehouse  
+- **SQL** – Data transformation and analysis  
+- **Tableau** – Data visualization  
+- **Eraser** – Pipeline/architecture diagram design  
+- **ChatGPT & Gemini** – Assisted in analytical structuring and ideation  
 
 ---
 
-### Data Modeling
+## 🔄 Data Pipeline
 
-The dataset was structured and optimized within Snowflake to support efficient analytical querying.
+Kaggle Dataset → AWS S3 → Snowflake → SQL Analysis → Tableau Dashboards  
+
+---
+
+## 🏗️ Data Architecture
+
+![Pipeline](architecture/pipeline_architecture.png)
+
+### ☁️ AWS S3 (Data Storage)
+![S3](architecture/s3_data_storage.png)
+
+### ❄️ Snowflake (Data Warehouse)
+![Snowflake](architecture/snowflake_query_execution.png)
+
+This architecture simulates a real-world cloud-based analytics workflow.
+
+---
+
+## 🧱 Data Modeling
 
 - Data cleaning and standardisation  
-- Handling inconsistencies in timestamps and transaction records  
-- Optimisation for large-scale query performance  
-- Structuring data for behavioural and risk analysis  
+- Handling timestamp inconsistencies  
+- Structuring data for analytical queries  
+- Optimisation for large-scale processing  
 
 ---
 
-### Data Visualization (Tableau)
+## 📊 Tableau Dashboards
 
-Interactive dashboards were developed to transform analytical outputs into actionable fraud risk insights.
+### 1. Fraud Overview
 
-- Highlights fraud trends and high-risk transaction patterns  
-- Enables rapid identification of anomalies  
-- Supports decision-making for fraud monitoring  
-- Bridges the gap between raw data and business interpretation  
+![Fraud Overview](dashboards/fraud_overview.png)
 
----
-
-### Dashboards
-
-#### 1. Fraud Overview Dashboard
-(Add screenshot)
-
-A high-level overview of fraud distribution across the dataset.
-
-- Total transactions vs fraudulent transactions  
-- Fraud rate and trend analysis  
-- KPI-based monitoring of fraud activity  
+- Total vs fraudulent transactions  
+- Fraud rate and trend monitoring  
+- High-level KPI tracking  
 
 ---
 
-#### 2. Transaction Behaviour Analysis
-(Add screenshot)
+### 2. Transaction Behaviour Analysis
 
-Focuses on transaction dynamics and behavioural patterns.
+![Behaviour](dashboards/fraud_behavior.png)
 
 - Transaction trends over time  
-- Peak activity periods and unusual spikes  
-- Spending deviation analysis  
+- Peak activity detection  
+- Spending deviation insights  
 
 ---
 
-#### 3. Risk & Anomaly Insights
-(Add screenshot)
+### 3. Risk & Anomaly Insights
 
-Designed to highlight high-risk indicators and suspicious patterns.
+![Risk](dashboards/transaction_insights.png)
 
-- High-risk transaction categories and channels  
+- High-risk channels and categories  
 - Location-based anomalies  
-- Behavioural deviations linked to fraud  
+- Behavioural indicators linked to fraud  
 
 ---
 
-### Data Preparation
+## 🧹 Data Preparation
 
 - Data ingestion from AWS S3 into Snowflake  
-- Data cleaning and transformation  
-- Data validation and consistency checks  
+- Cleaning and transformation using SQL  
+- Validation and consistency checks  
 - Query optimisation for performance  
 
 ---
 
-### Analytical Framework
+## 🔍 Analytical Framework
 
-The project is structured into multiple analytical phases focusing on fraud risk evaluation.
+### Phase 1: Transaction Overview
+- Analysed transaction volume and distribution  
+- Identified unusual activity patterns  
 
-#### Phase 1: Transaction Overview
-- Analysed overall transaction distribution and volume  
-- Identified peak periods and irregular activity  
+### Phase 2: Fraud Pattern Analysis
+- Evaluated fraud rates across categories  
+- Identified high-risk transaction types  
 
-#### Phase 2: Fraud Pattern Analysis
-- Evaluated fraud rate across transaction types  
-- Identified high-risk categories and channels  
+### Phase 3: Behavioural Analytics
+- Analysed velocity and transaction frequency  
+- Identified spending anomalies  
 
-#### Phase 3: Behavioural Analytics
-- Analysed transaction velocity and frequency  
-- Evaluated spending deviations from normal behaviour  
-- Identified unusual transaction patterns  
+### Phase 4: Risk Profiling
+- Combined indicators to assess fraud risk  
+- Identified concentration of fraudulent activity  
 
-#### Phase 4: Risk Profiling
-- Combined multiple indicators to assess transaction risk  
-- Analysed concentration of fraudulent activity  
-
-#### Phase 5: Advanced SQL Analysis
-- Applied window functions (LAG, LEAD) for sequential insights  
-- Performed rolling and comparative analysis  
-- Developed queries to highlight anomaly patterns  
+### Phase 5: Advanced SQL Analysis
+- Window functions (LAG, LEAD)  
+- Rolling metrics and trend analysis  
+- Sequential anomaly detection  
 
 ---
 
-### Key Insights
+## 📈 Key Insights
 
-- Fraud is concentrated within specific transaction types and channels  
-- High transaction velocity is a strong indicator of suspicious activity  
-- Behavioural deviations highlight potential fraud cases  
-- Certain locations show higher fraud occurrence  
-- Combining multiple indicators improves fraud risk identification  
-
----
-
-### Repository Structure
-
-- `sql/` → data transformation and analytical queries  
-- `images/` → architecture diagrams  
-- `dashboards/` → Tableau visuals  
-- `dataset/` → dataset reference  
+- Fraud is concentrated in specific transaction types and channels  
+- High transaction velocity strongly correlates with fraud  
+- Behavioural deviations are key fraud indicators  
+- Certain locations show higher fraud concentration  
+- Combining multiple signals improves risk identification  
 
 ---
 
-### Skills Demonstrated
+## 📁 Repository Structure
 
-- Advanced SQL querying and optimisation  
-- Cloud data pipeline design (AWS S3 + Snowflake)  
-- Fraud risk analysis and anomaly detection  
+- `/sql` – SQL queries for analysis (Snowflake)  
+- `/dashboards` – Tableau dashboard screenshots  
+- `/architecture` – Pipeline and infrastructure visuals  
+- `/data` – Dataset documentation and sample data  
+
+---
+
+## 💡 Skills Demonstrated
+
+- Advanced SQL (joins, window functions, aggregations)  
+- Cloud data workflow (AWS S3 → Snowflake)  
+- Fraud risk analysis & anomaly detection  
 - Behavioural data analysis  
-- Large-scale data processing  
-- Data visualization and storytelling using Tableau  
+- Large-scale data handling  
+- Data storytelling with Tableau  
 
 ---
 
-### Tools & Technologies
+## 🛠️ Tools & Technologies
 
-SQL (Snowflake) • AWS S3 • Tableau • Data Warehousing • Data Analytics  
+SQL • Snowflake • AWS S3 • Tableau • Data Warehousing • Analytics  
 
 ---
 
-### Author
-Shahan S
+## 👤 Author
+
+**Shahan S**
